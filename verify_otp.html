@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificação OTP</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Verificação OTP</h1>
+    <p>Use o código gerado pelo seu aplicativo autenticador.</p>
+    <form action="/verify" method="post">
+        <label>Código OTP:</label>
+        <input type="text" name="otp" required><br>
+        <button type="submit">Verificar</button>
+    </form>
+</body>
+</html>
