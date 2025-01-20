@@ -6,7 +6,15 @@
 </head>
 <body>
     <h1>Verificação OTP</h1>
-    <p>Use o código gerado pelo seu aplicativo autenticador.</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
     <form action="/verify" method="post">
         <label>Código OTP:</label>
         <input type="text" name="otp" required><br>
